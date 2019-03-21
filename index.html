@@ -13,48 +13,40 @@
   <body>
 
     <form action="/charge" method="post" id="payment-form">
-        <div class="form-row">
-
+        <div class="form-group">
             <label for="full-name">Full Name</label>
-            <div id="full-name">
-            <!-- A Stripe Element will be inserted here. -->
-            </div>
-
+            <input type="text" class="form-control" id="full-name" placeholder="Enter full name">
+        </div>
+        <div class="form-group">
             <label for="street-address">Street Address</label>
-            <div id="street-address">
-            <!-- A Stripe Element will be inserted here. -->
-            </div>
-
+            <input type="text" class="form-control" id="street-address" placeholder="Enter street address">
+        </div>
+        <div class="form-group">
             <label for="city-name">City</label>
-            <div id="city-name">
-            <!-- A Stripe Element will be inserted here. -->
-            </div>
-
+            <input type="text" class="form-control" id="city-name" placeholder="Enter city name">
+        </div>
+        <div class="form-group">
             <label for="state-name">State</label>
-            <div id="state-name">
-            <!-- A Stripe Element will be inserted here. -->
-            </div>
-
-            <label for="zip-code">Zipcode</label>
-            <div id="zip-code">
-            <!-- A Stripe Element will be inserted here. -->
-            </div>
-
+            <input type="text" class="form-control" id="state-name" placeholder="Enter state abbrieviation">
+        </div>
+        <div class="form-group">
+            <label for="zip-code">Zip Code</label>
+            <input type="text" class="form-control" id="zip-code" placeholder="Enter zip code">
+        </div>
+        <div class="form-group">
             <label for="email-address">Email Address</label>
-            <div id="email-address">
-            <!-- A Stripe Element will be inserted here. -->
-            </div>
-
+            <input type="email" class="form-control" id="email-address" placeholder="Enter email address">
+        </div>
+        <div class="form-group">
             <label for="phone-number">Phone Number</label>
-            <div id="phone-number">
+            <input type="text" class="form-control" id="phone-number" placeholder="Enter phone number">
+        </div>
+        <div class="form-group">
+            <label for="card-element">Credit or debit card</label>
+            <div class="form-control" id="card-element">
             <!-- A Stripe Element will be inserted here. -->
             </div>
 
-            <label for="card-element">Credit or debit card</label>
-            <div id="card-element">
-            <!-- A Stripe Element will be inserted here. -->
-            </div>
-        
             <!-- Used to display Element errors. -->
             <div id="card-errors" role="alert"></div>
         </div>
@@ -84,13 +76,6 @@
         const card = elements.create('card', {style});
 
         // Add an instance of the card Element into the `card-element` <div>.
-        card.mount('#full-name');
-        card.mount('#street-address');
-        card.mount('#city-name');
-        card.mount('#state-name');
-        card.mount('#zip-code');
-        card.mount('#email-address');
-        card.mount('#phone-number');
         card.mount('#card-element');
     </script>
   </body>
