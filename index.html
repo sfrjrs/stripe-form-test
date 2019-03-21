@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Stripe Test Form</title>
+  </head>
+  <body>
+
+    <form action="/charge" method="post" id="payment-form">
+        <div class="form-row">
+
+            <label for="full-name">Full Name</label>
+            <div id="full-name">
+            <!-- A Stripe Element will be inserted here. -->
+            </div>
+
+            <label for="street-address">Street Address</label>
+            <div id="street-address">
+            <!-- A Stripe Element will be inserted here. -->
+            </div>
+
+            <label for="city-name">City</label>
+            <div id="city-name">
+            <!-- A Stripe Element will be inserted here. -->
+            </div>
+
+            <label for="state-name">State</label>
+            <div id="state-name">
+            <!-- A Stripe Element will be inserted here. -->
+            </div>
+
+            <label for="zip-code">Zipcode</label>
+            <div id="zip-code">
+            <!-- A Stripe Element will be inserted here. -->
+            </div>
+
+            <label for="email-address">Email Address</label>
+            <div id="email-address">
+            <!-- A Stripe Element will be inserted here. -->
+            </div>
+
+            <label for="phone-number">Phone Number</label>
+            <div id="phone-number">
+            <!-- A Stripe Element will be inserted here. -->
+            </div>
+
+            <label for="card-element">Credit or debit card</label>
+            <div id="card-element">
+            <!-- A Stripe Element will be inserted here. -->
+            </div>
+        
+            <!-- Used to display Element errors. -->
+            <div id="card-errors" role="alert"></div>
+        </div>
+        <button>Submit Payment</button>
+    </form>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        const stripe = Stripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+        const elements = stripe.elements();
+
+        // Custom styling can be passed to options when creating an Element.
+        const style = {
+            base: {
+                // Add your base input styles here. For example:
+                fontSize: '16px',
+                color: "#32325d",
+            },
+        };
+
+        // Create an instance of the card Element.
+        const card = elements.create('card', {style});
+
+        // Add an instance of the card Element into the `card-element` <div>.
+        card.mount('#full-name');
+        card.mount('#street-address');
+        card.mount('#city-name');
+        card.mount('#state-name');
+        card.mount('#zip-code');
+        card.mount('#email-address');
+        card.mount('#phone-number');
+        card.mount('#card-element');
+    </script>
+  </body>
+</html>
